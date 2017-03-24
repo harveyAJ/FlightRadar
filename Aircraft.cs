@@ -8,6 +8,14 @@ namespace FlightRadar
 {
     public class Aircraft
     {
+        public Aircraft()
+        {
+            PosTime = new List<double>();
+            Lat = new List<double>();
+            Long = new List<double>();
+            Count = 0;
+        }
+
         public string Id          {get;set;}//        4499955,
         public string Rcvr        {get;set;}//          1,
         public string HasSig      {get;set;}//            false,
@@ -22,9 +30,11 @@ namespace FlightRadar
         public string InHg        {get;set;}//          30.2066936,
         public string AltT        {get;set;}//          0,
         public string Call        {get;set;}//          "JAF26M",
-        public string Lat         {get;set;}//         45.884941,
-        public string Long        {get;set;}//          5.05203,
-        public string PosTime     {get;set;}//             148743105
+        public List<double> Lat         {get; private set;}//         45.884941,
+        public List<double> Long        {get; private set;}//          5.05203,
+        public List<double> PosTime     {get; private set;}//             148743105
+
+        public List<double> DeltaT { get; private set; }
         public string Mlat        {get;set;}//          false,
         public string Tisb        {get;set;}//          false,
         public string Spd         {get;set;}//         273.4,
@@ -57,5 +67,15 @@ namespace FlightRadar
         public string CallSus     {get;set;}//             false,
         public string Trt         {get;set;}//         2,
         public string Year { get; set; }//          "2008"}],
+
+        public void Add(double posTime_ms, double lat_deg, double long_deg)
+        {
+            PosTime.Add(posTime_ms);
+            Lat.Add(lat_deg);
+            Long.Add(long_deg);
+            Count++;
+        }
+
+        public int Count { get; private set;  }
     }
 }
