@@ -6,3 +6,7 @@
 /.vs/FlightRadar/v14
 /obj/Debug
 /packages/Newtonsoft.Json.9.0.1
+/AdsBRecorder/bin/Debug
+/AdsBRecorder/obj/Debug
+/packages/Newtonsoft.Json.10.0.1
+/PostProcessing/obj/Debug

@@ -1,14 +1,13 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Text.RegularExpressions;
+using PostProcessing.Entities;
 
-namespace FlightRadar
+namespace PostProcessing
 {
     public class JsonPostProcessor
     {
@@ -22,8 +21,8 @@ namespace FlightRadar
             var aircrafts = new Dictionary<string, Aircraft>();
 
             foreach (var file in Directory.GetFiles(path, "*.json", SearchOption.TopDirectoryOnly))
-                //.Where(f => f.EndsWith("2017-14-03-6769.json") ||
-                //           f.EndsWith("2017-14-03-6810.json")).ToList())
+            //.Where(f => f.EndsWith("2017-14-03-6769.json") ||
+            //           f.EndsWith("2017-14-03-6810.json")).ToList())
             {
                 file.Count();
                 string ext = file.Substring(file.Count() - 9);
